@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block title %}
+Меню
+{% endblock %}
+
+{% load bootstrap5 %}
+
+{% block content %}
+<div style="height:auto;   text-align: center; margin-top: 10%;" class="form-row">
+    {% for i in data %}
+            <form action="{% url i %}"  method="GET" >
+                {% csrf_token %}
+            <button class="btn btn-info" style="width: 30%;height: 60px;"  type="submit">{{i}}</button></form>
+    {% endfor %} 
+</div>
+ {% endblock %}  
